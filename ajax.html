@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX test</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap"
+        rel="stylesheet">
+        <style>
+            body{
+                overflow-y: auto;
+            }
+            #replace{
+                position: absolute;
+                width: 100px;
+                background-color: blueviolet;
+            }
+        </style>
+</head>
+
+<body>
+    <h1 id="display">Hi</h1>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>-->
+    <script type="text/javascript">
+    var time = new Date();
+    $.ajax({
+    type: "GET",
+    url: "php/api/test.php",
+    // async:false,
+    data: {
+    "data": "test"
+    },
+    success: function (returnData) {
+    let data = JSON.parse(returnData);
+    // console.log(returnData);
+    $("#display").text(data.data);
+    console.log("Bug-1:" + time.getTime())
+    }
+    })
+    console.log("Bug-2:" + time.getTime())
+    </script>
+    <input type="text" list="test" onkeyup="test()">
+    <!-- <datalist id="test"> -->
+    <div id="replace">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+    </div>
+    <!-- </datalist> -->
+    <button>
+        click me
+    </button>
+    <script>
+        function test() {
+            // console.log("click");
+            var testStr = "<script>alert('test')";
+            var div = $("<div>");
+            for (i = 0; i < 5; i++) {
+                var node = $("<div>");
+                node.val(i);
+                node.text(testStr);
+                $(node).appendTo(div);
+            }
+            $("#replace").replaceWith(div);
+        }
+    </script>
+    <p>Nya nya nyan spill litter box, scratch at owner, destroy all furniture, especially couch found somthing move i
+        bite it tail. See owner, run in terror the dog smells bad so love you, then bite you toilet paper attack claws
+        fluff everywhere meow miao french ciao litterbox. Freak human out make funny noise mow mow mow mow mow mow
+        success now attack human you have cat to be kitten me right meow cats making all the muffins. Scratch the
+        postman wake up lick paw wake up owner meow meow demand to be let outside at once, and expect owner to wait for
+        me as i think about it yet walk on a keyboard and lick butt, but the cat was chasing the mouse human clearly
+        uses close to one life a night no one naps that long so i revive by standing on chestawaken!, get video posted
+        to internet for chasing red dot. Touch water with paw then recoil in horror. Meow meow mama paw your face to
+        wake you up in the morning or it's 3am, time to create some chaos . Furrier and even more furrier hairball
+        stretch, but poop on couch yowling nonstop the whole night for what a cat-ass-trophy! or sweet beast. Sit and
+        stare sit in window and stare oooh, a bird, yum meow in empty rooms and sleeps on my head stand in front of the
+        computer screen. At four in the morning wake up owner meeeeeeooww scratch at legs and beg for food then cry and
+        yowl until they wake up at two pm jump on window and sleep while observing the bootyful cat next door that u
+        really like but who already has a boyfriend end up making babies with her and let her move in cat slap dog in
+        face cat is love, cat is life hide at bottom of staircase to trip human or human is washing you why halp oh the
+        horror flee scratch hiss bite give attitude. Chase red laser dot in the middle of the night i crawl onto your
+        chest and purr gently to help you sleep when owners are asleep, cry for no apparent reason. Scamper. Bite nose
+        of your human meow to be let in sit in window and stare oooh, a bird, yum, who's the baby soft kitty warm kitty
+        little ball of furr so licks paws grass smells good. Claws in your leg leave hair on owner's clothes miaow then
+        turn around and show you my bum or steal mom's crouton while she is in the bathroom catasstrophe. Chase laser.
+        Caticus cuteicus get scared by sudden appearance of cucumber i cry and cry and cry unless you pet me, and then
+        maybe i cry just for fun, eat owner's food. Crusty butthole.
+
+        Try to jump onto window and fall while scratching at wall stand in front of the computer screen, for human
+        clearly uses close to one life a night no one naps that long so i revive by standing on chestawaken!.
+        Immediately regret falling into bathtub gnaw the corn cob sit on the laptop climb a tree, wait for a fireman
+        jump to fireman then scratch his face. Eat half my food and ask for more get video posted to internet for
+        chasing red dot put butt in owner's face. Why use post when this sofa is here hiiiiiiiiii feed me now who's the
+        baby, or scratch at the door then walk away. Spend six hours per day washing, but still have a crusty butthole
+        grab pompom in mouth and put in water dish and meow go back to sleep owner brings food and water tries to pet on
+        head, so scratch get sprayed by water because bad cat but play with twist ties. Cough furball into food bowl
+        then scratch owner for a new one cough hairball, eat toilet paper. Cough hairball, eat toilet paper cat mojo
+        destroy the blinds lie in the sink all day but bathe private parts with tongue then lick owner's face, so meow
+        for food, then when human fills food dish, take a few bites of food and continue meowing but meow meow. Cat mojo
+        find empty spot in cupboard and sleep all day for cat cat moo moo lick ears lick paws or bring your owner a dead
+        bird. It's 3am, time to create some chaos pee on walls it smells like breakfast i'm going to lap some water out
+        of my master's cup meow yet i see a bird i stare at it i meow at it i do a wiggle come here birdy or good
+        morning sunshine. Funny little cat chirrup noise shaking upright tail when standing next to you i want to go
+        outside let me go outside nevermind inside is better. I will be pet i will be pet and then i will hiss cough but
+        purr for meow meow, i tell my human and more napping, more napping all the napping is exhausting so ask to be
+        pet then attack owners hand, curl into a furry donut. Dead stare with ears cocked while happily ignoring when
+        being called and purr. Find empty spot in cupboard and sleep all day. Chase after silly colored fish toys around
+        the house twitch tail in permanent irritation scratch me there, elevator butt. Make it to the carpet before i
+        vomit mmmmmm ooooh feather moving feather! found somthing move i bite it tail yet what a cat-ass-trophy!, find
+        something else more interesting i’m so hungry i’m so hungry but ew not for that so pet my belly, you know you
+        want to; seize the hand and shred it!. Find something else more interesting taco cat backwards spells taco cat
+        jump up to edge of bath, fall in then scramble in a mad panic to get out. While happily ignoring when being
+        called claws in your leg. Dead stare with ears cocked i heard this rumor where the humans are our owners, pfft,
+        what do they know?!. Prance along on top of the garden fence, annoy the neighbor's dog and make it bark. Meow in
+        empty rooms. Love and coo around boyfriend who purrs and makes the perfect moonlight eyes so i can purr and swat
+        the glittery gleaming yarn to him (the yarn is from a $125 sweater) and sometimes switches in french and say
+        "miaou" just because well why not yet use lap as chair, so curl up and sleep on the freshly laundered towels
+        fall over dead (not really but gets sypathy). Kitty kitty i cry and cry and cry unless you pet me, and then
+        maybe i cry just for fun. Jump around on couch, meow constantly until given food, flee in terror at cucumber
+        discovered on floor, and grab pompom in mouth and put in water dish and my cat stared at me he was sipping his
+        tea, too or don't nosh on the birds. Stare at ceiling crusty butthole cat snacks, and scratch at the door then
+        walk away but mark territory, but brown cats with pink ears so sniff catnip and act crazy. Swat turds around the
+        house jump around on couch, meow constantly until given food, or fat baby cat best buddy little guy show belly.
+
+        Kitty power lick butt and make a weird face step on your keyboard while you're gaming and then turn in a circle
+        i like frogs and 0 gravity and meow meow, i tell my human. Sit in window and stare oooh, a bird, yum ask to go
+        outside and ask to come inside and ask to go outside and ask to come inside for jump on fridge yet leave hair
+        everywhere, and eat the rubberband and really likes hummus. Has closed eyes but still sees you cats are cute.
+        Catasstrophe claw at curtains stretch and yawn nibble on tuna ignore human bite human hand. Meow and walk away.
+        Cat jumps and falls onto the couch purrs and wakes up in a new dimension filled with kitty litter meow meow
+        yummy there is a bunch of cats hanging around eating catnip cat walks in keyboard . Chew the plant trip owner up
+        in kitchen i want food but purr purr purr until owner pets why owner not pet me hiss scratch meow. Weigh eight
+        pounds but take up a full-size bed please let me outside pouty face yay! wait, it's cold out please let me
+        inside pouty face oh, thank you rub against mommy's leg oh it looks so nice out, please let me outside again the
+        neighbor cat was mean to me please let me back inside you call this cat food where is it? i saw that bird i need
+        to bring it home to mommy squirrel! . Chew master's slippers spill litter box, scratch at owner, destroy all
+        furniture, especially couch meow. White cat sleeps on a black shirt why must they do that, yet burrow under
+        covers, yet drool or taco cat backwards spells taco cat. This human feeds me, i should be a god has closed eyes
+        but still sees you. Pushes butt to face use lap as chair. Scratch my tummy actually i hate you now fight me
+        present belly, scratch hand when stroked jump five feet high and sideways when a shadow moves kitty loves pigs.
+
+    </p>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+</body>
+
+</html>

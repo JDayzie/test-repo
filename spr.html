@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        #display {
+            margin: 100px 0px 0px 0px;
+        }
+
+        .btn {
+            width: 300px;
+        }
+
+        .btn:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" id="display">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col text-center">
+                <h1>text</h1>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-dark" value="1">Scissors</button>
+            </div>
+            <div class="col text-center">
+                <button class="btn btn-dark" value="2">Rocks</button>
+            </div>
+            <div class="col text-center">
+                <button class="btn btn-dark" value="3">Papers</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col text-center">
+                <button class="btn btn-primary">RESET</button>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script>
+        var p1 = 0;
+        var p2 = 0;
+        $(document).ready(function () {
+            $("h1").text("Player#1's turn");
+        })
+        $("button.btn-dark").click(function () {
+            // console.log($(this).val())
+            if (p1 == 0) {
+                $("h1").text("Player#2's turn");
+                p1 = $(this).val();
+            } else if(p2==0) {
+                p2 = $(this).val();
+                if (p1 == p2) {
+                    $("h1").text("Draw");
+                } else if (p1 == "1" && p2 == "2") {//1 ss 2 rk 3pp
+                    $("h1").text("Player#2 win");
+                } else if (p1 == "1" && p2 == "3") {
+                    $("h1").text("Player#1 win");
+                } else if (p1 == "2" && p2 == "3") {
+                    $("h1").text("Player#2 win");
+                } else if (p1 == "2" && p2 == "1") {
+                    $("h1").text("Player#1 win");
+                } else if (p1 == "3" && p2 == "1") {S
+                    $("h1").text("Player#2 win");
+                } else if (p1 == "3" && p2 == "2") {
+                    $("h1").text("Player#1 win");
+                }
+            }
+        })
+        $("button.btn-primary").click(function () {
+            p1 = 0;
+            p2 = 0;
+            $("h1").text("Player#1's turn");
+        })
+    </script>
+</body>
+
+</html>
